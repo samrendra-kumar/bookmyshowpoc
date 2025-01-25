@@ -1,9 +1,31 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
-function PosterComponent() {
-  return (
-    <div>PosterComponent</div>
-  )
-}
+const Poster=({title,posterPath,isDark,key,id})=>
+  {
+    return(
+      
+        <div className="flex flex-col items-start gap-2 px-1 md:px-3">
+        <div className="h-40 md:h-80">
+         <img
+          src={`https://image.tmdb.org/t/p/original${posterPath}`}
+          alt="poster"
+          className='w-full h-full rounded-md'
+         />
+        </div>
+        <h3
+          className={`text-lg font-bold ${
+            isDark ? "text-white" : "text-black"
+          }`}
+        >
+          {title}
+        </h3>
 
-export default PosterComponent
+        </div>
+
+      
+    )
+  }
+
+
+export default Poster 
