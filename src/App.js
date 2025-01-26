@@ -1,20 +1,22 @@
 
 import "./App.css";
 import { useState,setTimeout,useEffect } from "react";
-import TrendingMovies from "./components/Movie" ;
-import MovieSearch from "./components/SearchMovie";
-import Navigation from "./components/Navbar/NavbarComponent";
- import HeroCarousel from "./components/HeroCarousel/HeroCarousel";
+import {Routes,Route}from "react-router-dom";
+import axios from "axios";
  import Home from "./pages/Home";
+ import Movie from "./pages/Movie";
 import Footer from "./components/Footer/Footer";
-function App() {
-  
-  
+axios.defaults.baseURL="https://api.themoviedb.org/3";
+axios.defaults.params={} ;
+axios.defaults.params["api_key"]=process.env.REACT_APP_API_KEY;
+function App() { 
   return (
-  <div>
-   <Home/>
-      {/* <Footer/> */}
-  </div>
+    <Routes>
+      <Route path="/" element={<Home/>}></Route>
+      <Route path="/movie/:id" element={<Movie/>}></Route>
+   
+    </Routes>
+  
   );
 }
 
