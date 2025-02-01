@@ -9,7 +9,7 @@ import PosterSlider from '../components/PosterSlider/PSSlider';
 import { BiHelpCircle } from 'react-icons/bi';
 const Home =()=>{
   const[recommendMovies,setrecommendMovies]=useState([]);
- 
+  const [trendingMovies, setTrendingMovies] = useState([]);
 
     useEffect(()=>
       {
@@ -75,8 +75,20 @@ const Home =()=>{
           isDark={false}
         />
       </div>
-    <TrendingMovies/>
+    {/* Trending Movies */}
+    <div className="container mx-auto px-4 md:px-12 my-8 ">
+        <PosterSlider
+          title="Trending Movies"
+          subtitle="Trending movies right now"
+          posters={trendingMovies}
+          isDark={true}
+        />
+      </div>
+      <div className="font-normal font-black">
+      <TrendingMovies setMovieList={setTrendingMovies} />
     
+      </div>
+      
   </div>
    )
     }

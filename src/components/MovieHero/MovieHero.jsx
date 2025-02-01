@@ -35,17 +35,17 @@ const MovieHero = () => {
             </div>
           </div>
           <div className="flex items-center gap-3 md:px-4 md:w-screen text-xl px-4">
-            <button
+            {/* <button
               onClick={rentMoive}
               className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg px-4"
             >
               Rent ₹ 149
-            </button>
+            </button> */}
             <button
               onClick={buyMoive}
               className="bg-red-600 w-full py-3 text-white font-semibold rounded-lg"
             >
-              Buy ₹ 599
+              Buy Movie
             </button>
           </div>
         </div>
