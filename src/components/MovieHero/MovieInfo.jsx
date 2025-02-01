@@ -1,11 +1,17 @@
 import React,{useContext} from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { MovieContext } from "../../context/MovieContext";
 
 const MovieInfo=()=>
     {
         const { price, setIsOpen, isOpen, rentMovie, buyMovie, movie } =
         useContext(MovieContext);
-     
+        const navigate=useNavigate() ;
+        const {id}=useParams() ;
+       const bookTicket=()=>
+        {
+         navigate(`/booking/${id}`);
+        }
         const genres = movie.genres?.map(({ name }) => name).join(", ");
 
         return (
@@ -23,17 +29,17 @@ const MovieInfo=()=>
                   </h4>
                 </div>
                 <div className="flex items-center gap-3 ">
-                  <button
+                  {/* <button
                     className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg px-2 mx-4 font-poppins"
                     onClick={rentMovie}
                   >
                     Rent ₹ 149
-                  </button>
+                  </button> */}
                   <button
                     className="bg-red-600 w-full py-3 pl-2 text-white font-semibold rounded-lg font-poppins"
-                    onClick={buyMovie}
+                    onClick={bookTicket}
                   >
-                    Buy ₹ 599
+                    Book Ticket
                   </button>
                 </div>
               </div>

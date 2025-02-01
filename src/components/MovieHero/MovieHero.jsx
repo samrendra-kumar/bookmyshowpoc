@@ -1,13 +1,17 @@
 import React, { useContext, useEffect } from "react";
 import { MovieContext } from "../../context/MovieContext";
 import MovieInfo from "./MovieInfo";
-
+import { Navigate } from "react-router-dom";
+import Booking from "../BookTicket/Booking";
 const MovieHero = () => {
   const { movie, rentMoive, buyMoive } = useContext(MovieContext);
   // const { movie } = useContext(MovieContext)
   const genres = movie.genres?.map(({ name }) => name).join(", ");
   // console.log(genres);
-
+  const bookPage=()=>
+    {
+     Navigate()
+    }
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -34,13 +38,7 @@ const MovieHero = () => {
               </h4>
             </div>
           </div>
-          <div className="flex items-center gap-3 md:px-4 md:w-screen text-xl px-4">
-            {/* <button
-              onClick={rentMoive}
-              className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg px-4"
-            >
-              Rent ₹ 149
-            </button> */}
+          
             <button
               onClick={buyMoive}
               className="bg-red-600 w-full py-3 text-white font-semibold rounded-lg"
@@ -82,7 +80,7 @@ const MovieHero = () => {
             />
           </div>
         </div>
-      </div>
+      
     </>
   );
 };

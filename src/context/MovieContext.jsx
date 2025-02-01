@@ -12,10 +12,10 @@ const MovieProvider = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [price, setPrice] = useState(0);
   
-    const rentMovie = () => {
-      setIsOpen(true);
-      setPrice(149);
-    };
+    // const rentMovie = () => {
+    //   setIsOpen(true);
+    //   setPrice(149);
+    // };
   
     const buyMovie = () => {
       setIsOpen(true);
@@ -30,7 +30,7 @@ const MovieProvider = ({ children }) => {
           price,
           setIsOpen,
           setPrice,
-          rentMovie,
+          //rentMovie,
           buyMovie
         }}
       >
