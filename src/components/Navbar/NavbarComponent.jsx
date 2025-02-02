@@ -2,8 +2,9 @@ import { BiChevronDown, BiMenu, BiSearch } from "react-icons/bi";
 // import CustomModal from "../Modal/Modal.Component";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const apiKey = process.env.REACT_APP_OPENCAGE_API_KEY;
+
 
 
 
@@ -11,6 +12,7 @@ const apiKey = process.env.REACT_APP_OPENCAGE_API_KEY;
 
 function NavLg() {
   const [location, setLocation] = useState("");
+  const navigate=useNavigate() ;
 return (
     <>
       <div className="container flex mx-auto px-4 items-center justify-between">
@@ -26,10 +28,20 @@ return (
           </div>
       {/*nav-links*/}
       <div className="flex gap-2">
-       <button className=" text-white bg-red-700 font-bold py-2 px-4 rounded">Trending </button>
-       <button className=" text-white bg-red-700 font-bold py-2 px-4 rounded">Top Rated </button>
-       <button className=" text-white bg-red-700 font-bold py-2 px-4 rounded">Upcoming</button>
-      </div>
+            <button
+              className="text-white bg-red-700 font-bold py-2 px-4 rounded"
+              onClick={() => navigate("/filter?type=search")}
+            >
+              Search
+            </button>
+            
+            <button
+              className="text-white bg-red-700 font-bold py-2 px-4 rounded"
+              onClick={() => navigate("/filter?type=cast")}
+            >
+              Find by Cast/Crew
+            </button>
+          </div>
        
       </div>
     </>

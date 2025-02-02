@@ -86,7 +86,7 @@ const Home =()=>{
       </div>
       <div className="font-normal font-black">
       <TrendingMovies setMovieList={setTrendingMovies} />
-    
+      {/* <MovieSearch/> */}
       </div>
       
   </div>
