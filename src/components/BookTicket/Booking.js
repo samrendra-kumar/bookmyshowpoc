@@ -1,11 +1,12 @@
 import React, { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { MovieContext } from "../../context/MovieContext";
-
+import PaymentModal from "../MovieHero/PaymentModal";
 const Booking = () => {
   const { id } = useParams(); // Extracting movie ID from URL
-  const { movie } = useContext(MovieContext); // Getting movie details from context
-
+  
+  const{price,setIsOpen,isOpen,movie}=useContext(MovieContext)
+  const[isModalOpen,setIsModalOpen]=useState(false);
   // Seat arrangement and pricing
   const rows = {
     A: { seats: 10, price: 1000 },
@@ -73,9 +74,13 @@ const Booking = () => {
       </h4>
 
       {/* Payment Button */}
+      
+     
+      <PaymentModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} amount={ totalPrice} />
       <button
         className="bg-red-600 text-white px-6 py-2 mt-6 rounded-lg font-semibold shadow-md hover:bg-red-700 transition duration-200 disabled:bg-gray-400"
         disabled={selectedSeats.length === 0}
+        onClick={()=>setIsModalOpen(true)}
       >
         Pay ₹{totalPrice}
       </button>

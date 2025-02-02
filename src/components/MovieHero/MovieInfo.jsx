@@ -1,6 +1,7 @@
-import React,{useContext} from "react";
+import React,{useContext,useState} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { MovieContext } from "../../context/MovieContext";
+import PaymentModal from "./PaymentModal";
 
 const MovieInfo=()=>
     {
@@ -8,6 +9,7 @@ const MovieInfo=()=>
         useContext(MovieContext);
         const navigate=useNavigate() ;
         const {id}=useParams() ;
+        const[isModalOpen,setIsModalOpen]=useState(false);
        const bookTicket=()=>
         {
          navigate(`/booking/${id}`);
@@ -16,7 +18,7 @@ const MovieInfo=()=>
 
         return (
             <>
-              
+             {/* <PaymentModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} amount={price} /> */}
               <div className="flex flex-col gap-3 px-4 my-3">
                 <h1 className="text-5xl font-bold text-white font-poppins">{movie.original_title}</h1>
                 <div className="text-black flex flex-col gap-2 md:px-4">
@@ -29,14 +31,10 @@ const MovieInfo=()=>
                   </h4>
                 </div>
                 <div className="flex items-center gap-3 ">
-                  {/* <button
-                    className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg px-2 mx-4 font-poppins"
-                    onClick={rentMovie}
-                  >
-                    Rent ₹ 149
-                  </button> */}
+                
                   <button
                     className="bg-red-600 w-full py-3 pl-2 text-white font-semibold rounded-lg font-poppins"
+                    // onClick={()=>setIsModalOpen(true)}
                     onClick={bookTicket}
                   >
                     Book Ticket
