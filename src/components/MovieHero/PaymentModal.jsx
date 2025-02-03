@@ -7,7 +7,7 @@ const PaymentModal = ({ isOpen, setIsOpen, amount }) => {
   // Razorpay Payment Handler
   const handlePayment = async () => {
     const options = {
-      key: process.env.REACT_APP_RAZORPAY_KEY, // Replace with your Razorpay test key
+      key: 'rzp_test_YaUSDx73g3O4Qy', // Replace with your Razorpay test key
       amount: amount * 100, // Convert to paise
       currency: "INR",
       name: "Movie Booking",
