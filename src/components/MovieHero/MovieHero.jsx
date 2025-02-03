@@ -5,6 +5,9 @@ import { Navigate } from "react-router-dom";
 import Booking from "../BookTicket/Booking";
 const MovieHero = () => {
   const { movie, rentMoive, buyMoive } = useContext(MovieContext);
+  console.log("Movie Data from Context:",movie);
+  const movieDebugData=JSON.stringify(movie,null,2);
+  console.log(movieDebugData)
   // const { movie } = useContext(MovieContext)
   const genres = movie.genres?.map(({ name }) => name).join(", ");
   // console.log(genres);

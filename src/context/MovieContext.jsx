@@ -40,3 +40,5 @@ const MovieProvider = ({ children }) => {
   };
   
   export default MovieProvider;
+
+

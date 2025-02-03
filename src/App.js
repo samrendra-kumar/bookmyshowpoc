@@ -11,7 +11,7 @@ import FilterPage from "./components/FillterPage/FilterPage";
 axios.defaults.baseURL="https://api.themoviedb.org/3";
 
 axios.defaults.params={} ;
-axios.defaults.params["api_key"]=process.env.REACT_APP_API_KEY;
+axios.defaults.params["api_key"]='2a8f858a167fced7d340ff534aac916e';
 function App() { 
   return (
     <Routes>
