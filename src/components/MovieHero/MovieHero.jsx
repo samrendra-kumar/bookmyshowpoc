@@ -41,7 +41,7 @@ const MovieHero = () => {
           
             <button
               onClick={buyMoive}
-              className="bg-red-600 w-full py-3 text-white font-semibold rounded-lg"
+              className="bg-red-500 text-black px-4 py-2 rounded"
             >
               Buy Movie
             </button>

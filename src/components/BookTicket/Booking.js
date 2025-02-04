@@ -5,7 +5,7 @@ import PaymentModal from "../MovieHero/PaymentModal";
 const Booking = () => {
   const { id } = useParams(); // Extracting movie ID from URL
   
-  const{price,setIsOpen,isOpen,movie}=useContext(MovieContext)
+  const{movie}=useContext(MovieContext)
   const[isModalOpen,setIsModalOpen]=useState(false);
   // Seat arrangement and pricing
   const rows = {
@@ -34,15 +34,15 @@ const Booking = () => {
   const totalPrice = selectedSeats.reduce((sum, seat) => sum + seat.price, 0);
 
   return (
-    <div className="flex flex-col items-center bg-gray-100 min-h-screen py-10">
+    <div className="flex flex-col items-center min-h-screen py-10 bg-gradient-to-b from-red-700 to-black">
       {/* Header */}
-      <h2 className="text-3xl font-bold text-gray-800 mb-2">Book My Ticket</h2>
-      <h3 className="text-xl font-semibold text-gray-700 mb-6">
+      <h2 className="text-4xl font-bold text-black font-thin mb-2">🎟️ Book My Ticket</h2>
+      <h3 className="text-xl font-semibold text-gray-300 mb-6">
         {movie?.original_title || "Loading..."} (INOX)
       </h3>
 
       {/* Seat Grid */}
-      <div className="space-y-3 bg-white p-6 shadow-lg rounded-lg">
+      <div className="space-y-3 bg-black  bg-opacity-50 p-6 shadow-lg rounded-xl">
         {Object.entries(rows).map(([row, { seats, price }]) => (
           <div key={row} className="flex items-center justify-center space-x-2">
             <span className="font-semibold text-gray-700">{row} (₹{price})</span>
@@ -55,8 +55,8 @@ const Booking = () => {
                     transition-all duration-200
                     ${
                       selectedSeats.some((s) => s.id === seatId)
-                        ? "bg-green-500 text-white"
-                        : "bg-gray-200 hover:bg-gray-300"
+                        ? "bg-green-500 text-white shadow-md shadow-green-500/50"
+                        : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"
                     }`}
                   onClick={() => toggleSeatSelection(row, index + 1, price)}
                 >
@@ -69,16 +69,16 @@ const Booking = () => {
       </div>
 
       {/* Total Cost */}
-      <h4 className="text-xl font-semibold text-gray-700 mt-4">
-        Total Price: ₹{totalPrice}
+      <h4 className="text-2xl font-semibold text-white mt-4">
+        Total Price:<span className="text-red-400"> ₹{totalPrice}</span>
       </h4>
 
       {/* Payment Button */}
       
      
       <PaymentModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} amount={ totalPrice} />
-      <button
-        className="bg-red-600 text-white px-6 py-2 mt-6 rounded-lg font-semibold shadow-md hover:bg-red-700 transition duration-200 disabled:bg-gray-400"
+      <button 
+        className="bg-red-500 text-black px-6 py-2 mt-6 rounded-lg font-semibold shadow-md hover:bg-red-700 transition duration-200 disabled:bg-gray-400"
         disabled={selectedSeats.length === 0}
         onClick={()=>setIsModalOpen(true)}
       >

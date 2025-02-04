@@ -5,10 +5,10 @@ const SearchBox = ({ query, setQuery, onSearch, placeholder }) => {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="p-2 border border-gray-400 rounded w-full"
+          className="p-2 border border-gray-400 rounded w-full bg-black  text-white"
           placeholder={placeholder}
         />
-        <button onClick={onSearch} className="bg-blue-500 text-white px-4 py-2 rounded">
+        <button onClick={onSearch} className="bg-red-500 text-black px-4 py-2 rounded">
           Search
         </button>
       </div>

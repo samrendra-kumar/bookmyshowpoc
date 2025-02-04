@@ -29,14 +29,14 @@ return (
       {/*nav-links*/}
       <div className="flex gap-2">
             <button
-              className="text-white bg-red-700 font-bold py-2 px-4 rounded"
+              className="bg-red-500 text-black px-4 py-2 rounded"
               onClick={() => navigate("/filter?type=search")}
             >
               Search
             </button>
             
             <button
-              className="text-white bg-red-700 font-bold py-2 px-4 rounded"
+              className="bg-red-500 text-black px-4 py-2 rounded"
               onClick={() => navigate("/filter?type=cast")}
             >
               Find by Cast/Crew

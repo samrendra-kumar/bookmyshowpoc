@@ -33,7 +33,7 @@ const MovieInfo=()=>
                 <div className="flex items-center gap-3 ">
                 
                   <button
-                    className="bg-red-600 w-full py-3 pl-2 text-white font-semibold rounded-lg font-poppins"
+                    className="bg-red-600 w-full py-3 pl-2 text-black font-semibold rounded-lg font-poppins"
                     // onClick={()=>setIsModalOpen(true)}
                     onClick={bookTicket}
                   >
