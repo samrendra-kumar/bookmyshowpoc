@@ -8,7 +8,7 @@ import PosterSlider from '../components/PosterSlider/PSSlider';
 import MovieHero from '../components/MovieHero/MovieHero';
 import CastComponent from '../components/Cast/CastComponent';
 import Loader from "../components/Loader/Loader";
-
+import Footer from '../components/Footer/Footer';
 
 const MoviePage = () => {
   const { id } = useParams();
@@ -261,6 +261,7 @@ const MoviePage = () => {
          
         </>
       )}
+      <Footer/>
     </>
   );
 };

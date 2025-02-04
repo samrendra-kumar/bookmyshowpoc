@@ -7,6 +7,7 @@ import HeroCarousel from '../components/HeroCarousel/HeroCarousel';
 import EntertainSlider from '../components/Entertainment/EntertainmentCard';
 import PosterSlider from '../components/PosterSlider/PSSlider';
 import { BiHelpCircle } from 'react-icons/bi';
+import Footer from '../components/Footer/Footer';
 const Home =()=>{
   const[recommendMovies,setrecommendMovies]=useState([]);
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -88,6 +89,7 @@ const Home =()=>{
       <TrendingMovies setMovieList={setTrendingMovies} />
       {/* <MovieSearch/> */}
       </div>
+      <Footer/>
       
   </div> 
    )
